@@ -7,6 +7,7 @@ package com.lbg.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,16 +27,16 @@ public class keyboardHandler
     public  void    readChars()
     {
         int x;
+        Scanner sc = new Scanner(itsInputStream);
         
-        try
+        prompt();
+        x = sc.nextInt();
+        
+        while( x != -1 )
         {
-            while( prompt() && (x = itsInputStream.read()) != -1 )            
-            {
-                System.out.println(x);
-            }
-        } catch (IOException ex)
-        {
-            Logger.getLogger(keyboardHandler.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(x);
+            prompt();
+            x = sc.nextInt();            
         }
     }
     
