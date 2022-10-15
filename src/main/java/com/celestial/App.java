@@ -16,21 +16,17 @@ public class App
         
         try
         {
-            prompt();
-            lineRead = sc.next();
-
-            while( lineRead != null )
+            while( prompt() && (lineRead = sc.next()) != null )
             {
                 System.out.println(lineRead);
-                prompt();
-                lineRead = sc.next();            
             }
         }catch( NoSuchElementException e )
         {}
     }
     
-    static private void prompt()
+    static private boolean prompt()
     {
         System.out.print("Press a key:");
+        return true;
     }
 }
