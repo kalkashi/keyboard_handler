@@ -14,24 +14,19 @@ public class App
         String lineRead;
         Scanner sc = new Scanner(System.in);
         
-        try
-        {
-            prompt();
-            lineRead = sc.next();
+        prompt();
+        lineRead = sc.next();
 
-            while( lineRead != null )
-            {
-                System.out.println(lineRead);
-                prompt();
-                lineRead = sc.next();            
-            }
-        }catch( NoSuchElementException e )
-        {}
+        while( lineRead != null )
+        {
+            System.out.println(lineRead);
+            prompt();
+            lineRead = sc.next();            
+        }
     }
     
-    static private boolean prompt()
+    static private void prompt()
     {
         System.out.print("Press a key:");
-        return true;
     }
 }
