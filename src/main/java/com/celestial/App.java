@@ -16,13 +16,18 @@ public class App
         prompt();
         lineRead = sc.next();
 
-        System.out.println(lineRead);
-
+        while( lineRead != null )
+        {
+            System.out.println(lineRead);
+            prompt();
+            lineRead = sc.next();            
+        }
     }
     
-    static private void prompt()
+    static private boolean prompt()
     {
         System.out.print("Press a key:");
+        return true;
     }
 
 }
