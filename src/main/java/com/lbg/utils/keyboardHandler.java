@@ -5,11 +5,9 @@
  */
 package com.lbg.utils;
 
-import java.io.IOException;
 import java.io.InputStream;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -26,18 +24,22 @@ public class keyboardHandler
     
     public  void    readChars()
     {
-        int x;
+        String x;
         Scanner sc = new Scanner(itsInputStream);
         
-        prompt();
-        x = sc.nextInt();
-        
-        while( x != -1 )
+        try
         {
-            System.out.println(x);
             prompt();
-            x = sc.nextInt();            
-        }
+            x = sc.next();
+
+            while( x != null )
+            {
+                System.out.println(x);
+                prompt();
+                x = sc.next();            
+            }
+        }catch( NoSuchElementException e )
+        {}
     }
     
     private boolean prompt()
