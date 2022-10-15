@@ -14,15 +14,19 @@ public class App
         String lineRead;
         Scanner sc = new Scanner(System.in);
         
-        prompt();
-        lineRead = sc.next();
-
-        while( lineRead != null )
+        try
         {
-            System.out.println(lineRead);
             prompt();
-            lineRead = sc.next();            
-        }
+            lineRead = sc.next();
+
+            while( lineRead != null )
+            {
+                System.out.println(lineRead);
+                prompt();
+                lineRead = sc.next();            
+            }
+        }catch( NoSuchElementException e )
+        {}
     }
     
     static private void prompt()
