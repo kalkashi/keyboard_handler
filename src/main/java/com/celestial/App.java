@@ -15,7 +15,7 @@ public class App
     {
         String lineRead;
         Scanner sc = new Scanner(System.in);
-        
+        int lineNo = 0;
         ArrayList lines = new ArrayList(10);
         
         try
@@ -29,8 +29,10 @@ public class App
         }catch( NoSuchElementException e )
         {}
         
-        for( var line : lines )
+        lines.forEach(line ->
+        {
             System.out.println(line);
+        });
     }
     
     static private boolean prompt()
