@@ -29,4 +29,10 @@ public class LineEntry
     {
         return itsText;
     } 
+
+    @Override
+    public String toString()
+    {
+        return itsLineNo + ": " + itsText;
+    }
 }
