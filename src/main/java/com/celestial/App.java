@@ -29,10 +29,8 @@ public class App
         }catch( NoSuchElementException e )
         {}
         
-        lines.forEach(line ->
-        {
-            System.out.println(line);
-        });
+        for(var line : lines )
+            System.out.println(++lineNo + ": " + line);        
     }
     
     static private boolean prompt()
