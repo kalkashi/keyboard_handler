@@ -1,7 +1,6 @@
 package com.celestial;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -22,7 +21,8 @@ public class App
         {
             while( prompt() && ((lineRead = sc.nextLine()) != null) )
             {
-                lines.add(lineRead);
+                LineEntry le = new LineEntry(++lineNo, lineRead);
+                lines.add(le);
                 if(lineRead.equalsIgnoreCase("QUIT"))
                     break;                
             }
@@ -30,7 +30,7 @@ public class App
         {}
         
         for(var line : lines )
-            System.out.println(++lineNo + ": " + line);        
+            System.out.println(line.toString());        
     }
     
     static private boolean prompt()
