@@ -30,7 +30,7 @@ public class App
         {}
         
         for(var line : lines )
-            System.out.println(line.toString());        
+            System.out.println(line);        
     }
     
     static private boolean prompt()
