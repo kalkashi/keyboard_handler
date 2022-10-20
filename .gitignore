@@ -26,6 +26,9 @@ dist/
 # JetBrains IDE
 .idea/
 
+# eclipse IDE
+bin/
+
 # Unit test reports
 TEST*.xml
 

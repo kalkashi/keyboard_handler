@@ -1,5 +1,6 @@
 package com.celestial;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -14,25 +15,23 @@ public class App
     {
         String lineRead;
         Scanner sc = new Scanner(System.in);
-        int growBy = 3;
-        String[] lines = new String[growBy];
+        ArrayList lines = new ArrayList(10);
+        int lineNo = 0;
         
         try
         {
-            for( int x = 0; (x < lines.length && prompt() && (lineRead = sc.next()) != null); x++ )
+            while( prompt() && (lineRead = sc.next()) != null )
             {
-            	lines[x] = lineRead;
-                System.out.println(lineRead);
-                if( x == lines.length-1 )
-                	lines = Arrays.copyOf(lines, lines.length+growBy);
                 if( lineRead.equalsIgnoreCase("QUIT"))
                 	break;
+            	lines.add(lineRead);
+                System.out.println(lineRead);
             }
         }catch( NoSuchElementException e )
         {}
         
-        for( String line : lines)
-        	System.out.println(line);
+        for( var line : lines)
+        	System.out.println(++lineNo + ": " + line);
     }
     
     static private boolean prompt()
