@@ -15,7 +15,7 @@ public class App
     {
         String lineRead;
         Scanner sc = new Scanner(System.in);
-        ArrayList lines = new ArrayList(10);
+        ArrayList<TextBlock> lines = new ArrayList<>(10);
         int lineNo = 0;
         
         try
@@ -24,19 +24,33 @@ public class App
             {
                 if( lineRead.equalsIgnoreCase("QUIT"))
                 	break;
-            	lines.add(lineRead);
+                TextBlock tb = new TextBlock(++lineNo, lineRead);
+            	lines.add(tb);
                 System.out.println(lineRead);
             }
         }catch( NoSuchElementException e )
         {}
         
-        for( var line : lines)
-        	System.out.println(++lineNo + ": " + line);
+        for( var tb : lines)
+        	System.out.println(tb);
+        
+        lines.forEach(tb ->{
+        	System.out.println(tb);
+        });
     }
     
     static private boolean prompt()
     {
         System.out.print("Enter a message:");
         return true;
+    }
+    
+    public void	fooBar()
+    {
+    	int x;
+    	x = 3;
+    	int y = 4;
+    	
+    	TextBlock tb2 = new TextBlock(2, "Ariana");
     }
 }
