@@ -14,17 +14,12 @@ import java.util.Scanner;
  */
 public class MsgElementReader   extends ElementReader
 {
-    public  void prompt()
-    {
-        System.out.print("Enter an Item (White space as seperator): ");
-    }
-    
     @Override
     public  String readFromKeyboard( InputStream is )
     {
         Scanner theScanner = new Scanner( is );
 
-        prompt();
+        prompt("Enter an Item (White space as seperator): ");
 
         String item = theScanner.next();
 

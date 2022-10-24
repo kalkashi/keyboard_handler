@@ -14,16 +14,11 @@ import java.util.Scanner;
  */
 public class MsgLineReader extends  ElementReader
 {
-    public  void prompt()
-    {
-        System.out.print("Enter a message (enter to complete): ");
-    }
-    
     @Override
     public  String readFromKeyboard( InputStream is )
     {
         Scanner theScanner = new Scanner( is );
-        prompt();
+        prompt("Enter a message (enter to complete): ");
 
         String str = theScanner.nextLine();
 
