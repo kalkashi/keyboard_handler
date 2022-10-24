@@ -14,17 +14,18 @@ public class App
     {
         String lineRead;
         Scanner sc = new Scanner(System.in);
+        MsgElementReader mer = new MsgElementReader(sc);
         int lineNo = 0;
         ArrayList lines = new ArrayList(10);
         
         try
         {
-            while( prompt() && ((lineRead = sc.nextLine()) != null) )
+            while( (lineRead = mer.readFromKeyboard()) != null )
             {
-                LineEntry le = new LineEntry(++lineNo, lineRead);
-                lines.add(le);
                 if(lineRead.equalsIgnoreCase("QUIT"))
                     break;                
+                LineEntry le = new LineEntry(++lineNo, lineRead);
+                lines.add(le);
             }
         }catch( NoSuchElementException e )
         {}
@@ -33,11 +34,5 @@ public class App
         {        
             System.out.println(line);
         });
-    }
-    
-    static private boolean prompt()
-    {
-        System.out.print("Enter a message: ");
-        return true;
     }
 }
