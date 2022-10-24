@@ -11,15 +11,12 @@ import java.io.InputStream;
  *
  * @author selvy
  */
-public class ElementReader
+public abstract class ElementReader
 {
     protected void prompt( String msg )
     {
         System.out.println( msg );
     }
 
-    public  String readFromKeyboard(InputStream is)
-    { 
-        return ""; 
-    }
+    abstract    public  String readFromKeyboard(InputStream is);
 }
