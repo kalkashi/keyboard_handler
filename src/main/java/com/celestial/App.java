@@ -17,7 +17,7 @@ public class App
         MsgElementReader mer = new MsgElementReader();
         MsgLineReader mlr = new MsgLineReader();
         MsgIntReader mir = new MsgIntReader();
-        ArrayList<ElementReader> readers = new ArrayList<>(2);
+        ArrayList<IElementReader> readers = new ArrayList<>(2);
         readers.add(mer);
         readers.add(mlr);
         readers.add(mir);
