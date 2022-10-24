@@ -12,21 +12,32 @@ public class App
 {
     public static void main( String[] args )
     {
-        String lineRead;
-        Scanner sc = new Scanner(System.in);
-        MsgElementReader mer = new MsgElementReader(sc);
-        MsgLineReader mlr = new MsgLineReader(sc);
+        String lineRead = "";
+        boolean exitApp = false;
+        MsgElementReader mer = new MsgElementReader();
+        MsgLineReader mlr = new MsgLineReader();
+        MsgIntReader mir = new MsgIntReader();
+        ArrayList<ElementReader> readers = new ArrayList<>(2);
+        readers.add(mer);
+        readers.add(mlr);
+        readers.add(mir);
         int lineNo = 0;
         ArrayList lines = new ArrayList(10);
         
         try
         {
-            while( (lineRead = mer.readFromKeyboard()) != null )
+            while( !exitApp && lineRead != null )
             {
-                if(lineRead.equalsIgnoreCase("QUIT"))
-                    break;                
-                LineEntry le = new LineEntry(++lineNo, lineRead);
-                lines.add(le);
+                for(var reader : readers) {
+                    lineRead = reader.readFromKeyboard(System.in);
+                    if (lineRead.equalsIgnoreCase("QUIT"))
+                    {
+                        exitApp = true;
+                        break;
+                    }
+                    LineEntry le = new LineEntry(++lineNo, lineRead);
+                    lines.add(le);                    
+                }
             }
         }catch( NoSuchElementException e )
         {}

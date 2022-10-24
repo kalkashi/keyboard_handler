@@ -5,31 +5,29 @@
  */
 package com.celestial;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
  *
  * @author selvy
  */
-public class MsgLineReader
+public class MsgLineReader extends  ElementReader
 {
-    private final Scanner theScanner;
-    
-    public  MsgLineReader( Scanner sc )
-    {
-        theScanner = sc;
-    }
-    
     public  void prompt()
     {
         System.out.print("Enter a message (enter to complete): ");
     }
     
-    public  String readFromKeyboard()
+    @Override
+    public  String readFromKeyboard( InputStream is )
     {
+        Scanner theScanner = new Scanner( is );
         prompt();
-        
-        return theScanner.nextLine();
+
+        String str = theScanner.nextLine();
+
+        return str;
     }
     
 }

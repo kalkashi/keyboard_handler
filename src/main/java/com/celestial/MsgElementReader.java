@@ -5,30 +5,29 @@
  */
 package com.celestial;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
  *
  * @author selvy
  */
-public class MsgElementReader
+public class MsgElementReader   extends ElementReader
 {
-    private final Scanner theScanner;
-    
-    public  MsgElementReader( Scanner sc )
-    {
-        theScanner = sc;
-    }
-    
     public  void prompt()
     {
         System.out.print("Enter an Item (White space as seperator): ");
     }
     
-    public  String readFromKeyboard()
+    @Override
+    public  String readFromKeyboard( InputStream is )
     {
+        Scanner theScanner = new Scanner( is );
+
         prompt();
-        
-        return theScanner.next();
+
+        String item = theScanner.next();
+
+        return item;
     }
 }
