@@ -15,6 +15,7 @@ public class App
         String lineRead;
         Scanner sc = new Scanner(System.in);
         MsgElementReader mer = new MsgElementReader(sc);
+        MsgLineReader mlr = new MsgLineReader(sc);
         int lineNo = 0;
         ArrayList lines = new ArrayList(10);
         

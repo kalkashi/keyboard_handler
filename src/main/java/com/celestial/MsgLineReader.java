@@ -11,24 +11,25 @@ import java.util.Scanner;
  *
  * @author selvy
  */
-public class MsgElementReader
+public class MsgLineReader
 {
     private final Scanner theScanner;
     
-    public  MsgElementReader( Scanner sc )
+    public  MsgLineReader( Scanner sc )
     {
         theScanner = sc;
     }
     
     public  void prompt()
     {
-        System.out.print("Enter an Item (White space as seperator): ");
+        System.out.print("Enter a message (enter to complete): ");
     }
     
     public  String readFromKeyboard()
     {
         prompt();
         
-        return theScanner.next();
+        return theScanner.nextLine();
     }
+    
 }
