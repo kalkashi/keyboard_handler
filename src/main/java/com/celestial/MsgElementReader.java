@@ -3,11 +3,11 @@ package com.celestial;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class MsgLineReader extends ElementReader 
+public class MsgElementReader extends ElementReader
 {
 	private Scanner theScanner;
 	
-	public	MsgLineReader( InputStream is )
+	public	MsgElementReader( InputStream is )
 	{
 		theScanner = new Scanner(is);
 	}
@@ -15,13 +15,13 @@ public class MsgLineReader extends ElementReader
 	@Override
     protected void prompt()
     {
-        System.out.print("Enter a line of Text (hit enter):");
+        System.out.print("Enter a token (hit enter):");
     }
     
 	@Override
     public	String readFromKeyboard()
     {
     	prompt();
-    	return theScanner.nextLine();
+    	return theScanner.next();
     }
 }
