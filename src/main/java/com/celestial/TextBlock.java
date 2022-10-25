@@ -19,7 +19,13 @@ public class TextBlock
 	}
 
 	@Override
-	public String toString() {
-		return getBlockNo() + ": " + getData();
+	public String toString() 
+	{
+		String padding = "";
+		
+		if( blockNo < 10 )
+			padding = " ";
+		
+		return padding + getBlockNo() + ": " + getData();
 	}
 }
