@@ -12,13 +12,14 @@ import java.util.Scanner;
  *
  * @author selvy
  */
-public class MsgLineReader implements   IElementReader
+public class MsgLineReader extends CustomPrompt implements IElementReader
 {
     @Override
     public  String readFromKeyboard( InputStream is )
     {
         Scanner theScanner = new Scanner( is );
-        System.out.print("Enter a message (enter to complete): ");
+        
+        prompt("Enter a message (enter to complete):");
 
         String str = theScanner.nextLine();
 

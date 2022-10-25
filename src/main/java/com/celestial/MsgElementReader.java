@@ -12,14 +12,14 @@ import java.util.Scanner;
  *
  * @author selvy
  */
-public class MsgElementReader   implements IElementReader
+public class MsgElementReader extends CustomPrompt implements IElementReader
 {
     @Override
     public  String readFromKeyboard( InputStream is )
     {
         Scanner theScanner = new Scanner( is );
 
-        System.out.print("Enter an Item (White space as seperator): ");
+        prompt("Enter an Item (White space as seperator):");
 
         String item = theScanner.next();
 
