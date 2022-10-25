@@ -17,10 +17,12 @@ public class App
         Scanner sc = new Scanner(System.in);
         ArrayList<TextBlock> lines = new ArrayList<>(10);
         int lineNo = 0;
+        MsgLineReader mlr = new MsgLineReader( System.in );
+        		
         
         try
         {
-            while( prompt() && (lineRead = sc.next()) != null )
+            while((lineRead = mlr.readFromKeyboard()) != null )
             {
                 if( lineRead.equalsIgnoreCase("QUIT"))
                 	break;
@@ -38,19 +40,5 @@ public class App
         	System.out.println(tb);
         });
     }
-    
-    static private boolean prompt()
-    {
-        System.out.print("Enter a message:");
-        return true;
-    }
-    
-    public void	fooBar()
-    {
-    	int x;
-    	x = 3;
-    	int y = 4;
-    	
-    	TextBlock tb2 = new TextBlock(2, "Ariana");
-    }
+
 }
