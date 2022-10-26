@@ -9,7 +9,7 @@ package com.celestial;
  *
  * @author selvy
  */
-public class MsgReader
+public abstract class MsgReader
 {
     protected ICustomPrompt itsPrompt;
     
