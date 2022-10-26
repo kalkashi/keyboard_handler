@@ -3,7 +3,7 @@ package com.celestial;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class MsgLineReader extends ElementReader 
+public class MsgLineReader extends ElementReader implements IElementReader 
 {
 	@Override
     public	String readFromKeyboard( InputStream is )

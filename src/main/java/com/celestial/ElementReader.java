@@ -8,8 +8,6 @@ public  abstract class  ElementReader
     {
     	System.out.print( msg );
     }
-    
-    public	abstract String readFromKeyboard( InputStream is); 
 }
 
 /*
