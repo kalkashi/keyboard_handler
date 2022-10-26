@@ -4,6 +4,6 @@ public class CustomPrompt
 {
     public void prompt( String msg )
     {
-    	System.out.print( msg );
+    	System.out.print( "[" + msg + "] " );
     }
 }
