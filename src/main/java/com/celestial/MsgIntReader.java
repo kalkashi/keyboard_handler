@@ -3,20 +3,13 @@ package com.celestial;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class MsgIntReader implements IElementReader
+public class MsgIntReader extends MsgReader implements IElementReader
 {
-    private ICustomPrompt itsPrompt;
-    
-    public  MsgIntReader( ICustomPrompt cp )
+    public  MsgIntReader( ICustomPrompt prompt )
     {
-        itsPrompt = cp;
+        super( prompt );
     }
     
-    public  void    setPrompt( ICustomPrompt cp )
-    {
-        itsPrompt = cp;
-    }
-        
     @Override
     public  String readFromKeyboard( InputStream is )
     {

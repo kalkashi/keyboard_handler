@@ -12,18 +12,11 @@ import java.util.Scanner;
  *
  * @author selvy
  */
-public class MsgLineReader implements IElementReader
+public class MsgLineReader extends MsgReader implements IElementReader
 {
-    private ICustomPrompt itsPrompt;
-    
-    public  MsgLineReader( ICustomPrompt cp )
+    public  MsgLineReader( ICustomPrompt prompt )
     {
-        itsPrompt = cp;
-    }
-    
-    public  void    setPrompt( ICustomPrompt cp )
-    {
-        itsPrompt = cp;
+        super( prompt );
     }
     
     @Override
