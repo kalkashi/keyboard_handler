@@ -18,14 +18,14 @@ import java.util.Scanner;
  */
 public class MsgElementReader implements IElementReader
 {
-    private CustomPrompt itsPrompt;
+    private ICustomPrompt itsPrompt;
     
-    public  MsgElementReader( CustomPrompt cp )
+    public  MsgElementReader( ICustomPrompt cp )
     {
         itsPrompt = cp;
     }
     
-    public  void    setPrompt( CustomPrompt cp )
+    public  void    setPrompt( ICustomPrompt cp )
     {
         itsPrompt = cp;
     }

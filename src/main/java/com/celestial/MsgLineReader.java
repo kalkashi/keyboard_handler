@@ -14,14 +14,14 @@ import java.util.Scanner;
  */
 public class MsgLineReader implements IElementReader
 {
-    private CustomPrompt itsPrompt;
+    private ICustomPrompt itsPrompt;
     
-    public  MsgLineReader( CustomPrompt cp )
+    public  MsgLineReader( ICustomPrompt cp )
     {
         itsPrompt = cp;
     }
     
-    public  void    setPrompt( CustomPrompt cp )
+    public  void    setPrompt( ICustomPrompt cp )
     {
         itsPrompt = cp;
     }

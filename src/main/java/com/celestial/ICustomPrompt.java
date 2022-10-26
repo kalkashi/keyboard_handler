@@ -9,11 +9,7 @@ package com.celestial;
  *
  * @author selvy
  */
-public class CustomPrompt   implements ICustomPrompt
+public interface ICustomPrompt
 {
-    @Override
-    public void prompt( String msg )
-    {
-        System.out.print( "[" + msg + "] " );
-    }    
+    void    prompt( String msg );
 }

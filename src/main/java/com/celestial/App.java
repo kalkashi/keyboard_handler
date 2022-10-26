@@ -12,10 +12,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        CustomPrompt thePrompt = new CustomPrompt();
-        MsgElementReader mer = new MsgElementReader(thePrompt);
+        ICustomPrompt thePrompt = new CustomPrompt();
+        ICustomPrompt theFKPrompt = new FunkyPrompt();
+        MsgElementReader mer = new MsgElementReader(theFKPrompt);
         MsgLineReader mlr = new MsgLineReader(thePrompt);
-        MsgIntReader mir = new MsgIntReader();
+        MsgIntReader mir = new MsgIntReader( thePrompt );
         ArrayList<IElementReader> readers = new ArrayList<>(2);
         readers.add(mer);
         readers.add(mlr);

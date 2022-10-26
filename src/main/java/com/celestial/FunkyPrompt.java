@@ -9,11 +9,11 @@ package com.celestial;
  *
  * @author selvy
  */
-public class CustomPrompt   implements ICustomPrompt
+public class FunkyPrompt    implements ICustomPrompt
 {
     @Override
     public void prompt( String msg )
     {
-        System.out.print( "[" + msg + "] " );
+        System.out.print( "><" + msg + ">< " );
     }    
 }
