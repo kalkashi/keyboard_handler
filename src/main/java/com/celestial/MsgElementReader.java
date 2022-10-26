@@ -5,23 +5,11 @@ import java.util.Scanner;
 
 public class MsgElementReader extends ElementReader
 {
-	private Scanner theScanner;
-	
-	public	MsgElementReader( InputStream is )
-	{
-		theScanner = new Scanner(is);
-	}
-	
 	@Override
-    protected void prompt()
+    public	String readFromKeyboard( InputStream is )
     {
-        System.out.print("Enter a token (hit enter):");
-    }
-    
-	@Override
-    public	String readFromKeyboard()
-    {
-    	prompt();
+		Scanner theScanner = new Scanner(is);
+    	prompt("Enter a token (hit enter):");
     	return theScanner.next();
     }
 }

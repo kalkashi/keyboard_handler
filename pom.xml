@@ -36,7 +36,8 @@
 
 
     </dependencies>
-    <build>  
+    <build>
+    	<finalName>keyboard_handler</finalName>  
         <plugins>
             <plugin>    
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -5,23 +5,11 @@ import java.util.Scanner;
 
 public class MsgLineReader extends ElementReader 
 {
-	private Scanner theScanner;
-	
-	public	MsgLineReader( InputStream is )
-	{
-		theScanner = new Scanner(is);
-	}
-	
 	@Override
-    protected void prompt()
+    public	String readFromKeyboard( InputStream is )
     {
-        System.out.print("Enter a line of Text (hit enter):");
-    }
-    
-	@Override
-    public	String readFromKeyboard()
-    {
-    	prompt();
+		Scanner theScanner = new Scanner(is);
+    	prompt("Enter a line of Text (hit enter):");
     	return theScanner.nextLine();
     }
 }
