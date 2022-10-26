@@ -3,7 +3,7 @@ package com.celestial;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class MsgIntReader extends MsgReader implements IElementReader
+public class MsgIntReader extends MsgReader
 {
     public  MsgIntReader( ICustomPrompt prompt )
     {

@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author selvy
  */
-public class MsgLineReader extends MsgReader implements IElementReader
+public class MsgLineReader extends MsgReader
 {
     public  MsgLineReader( ICustomPrompt prompt )
     {

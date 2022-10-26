@@ -16,7 +16,7 @@ import java.util.Scanner;
  * method, and there's no real polymorphism here.  So I'm going to use
  * CustomPrompt in an aggregate relationship instead
  */
-public class MsgElementReader extends MsgReader implements IElementReader
+public class MsgElementReader extends MsgReader
 {    
     public  MsgElementReader( ICustomPrompt prompt )
     {

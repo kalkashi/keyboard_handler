@@ -9,7 +9,7 @@ package com.celestial;
  *
  * @author selvy
  */
-public abstract class MsgReader
+public abstract class MsgReader implements IElementReader
 {
     protected ICustomPrompt itsPrompt;
     
