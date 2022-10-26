@@ -2,15 +2,18 @@ package com.celestial;
 
 import java.io.InputStream;
 
-public class ElementReader 
+public  abstract class  ElementReader 
 {
     protected void prompt( String msg )
     {
     	System.out.print( msg );
     }
     
-    public	String readFromKeyboard( InputStream is)
-    {
-    	return "";
-    }
+    public	abstract String readFromKeyboard( InputStream is); 
 }
+
+/*
+ * Polymorphism is the ability to invoke the same operation
+ * on different objects belonging to different types, resulting
+ * in different methods being called
+ */
