@@ -30,6 +30,10 @@ dist/
 .project
 bin/
 
+# eclipse
+.classpath
+.settings/
+
 # Unit test reports
 TEST*.xml
 
