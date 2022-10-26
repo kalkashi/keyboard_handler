@@ -1,5 +1,6 @@
 package com.celestial;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -13,47 +14,35 @@ public class App
 {
 	public static void main(String[] args) 
 	{
-		String lineRead = "";
-		boolean	exitApp = false;
-		ArrayList<TextBlock> lines = new ArrayList<>(10);
-		int lineNo = 0;
-
-		CustomPrompt cp = new CustomPrompt();
-		FunkyPrompt fk = new FunkyPrompt();
-		ArrayList<IElementReader> readers = new ArrayList<>(2);
-		readers.add(new MsgLineReader(fk));
-		readers.add(new MsgElementReader(cp));
+//		ArrayList<TextBlock> lines;
+//
+//		CustomPrompt cp = new CustomPrompt();
+//		FunkyPrompt fk = new FunkyPrompt();
+//		ArrayList<IElementReader> readers = new ArrayList<>(2);
+//		readers.add(new MsgLineReader(fk));
+//		readers.add(new MsgElementReader(cp));
+//		
+//		Runner rnr = new Runner( readers );
+//		
+//		lines = rnr.run();
+//
+//		for (var tb : lines)
+//			System.out.println(tb);
+//
+//		lines.forEach(tb -> {
+//			System.out.println(tb);
+//		});
 		
-		try 
-		{
-			while (!exitApp && lineRead != null) 
-			{
-				for ( var reader : readers )
-				{
-					lineRead = reader.readFromKeyboard(System.in);
-					
-					if( lineRead != null )
-					{
-						if (lineRead.equalsIgnoreCase("QUIT"))
-						{
-							exitApp = true;
-							break;
-						}
-						TextBlock tb = new TextBlock(++lineNo, lineRead);
-						lines.add(tb);
-					}else
-						break;
-				}
-			}
-		} catch (NoSuchElementException e) {
-		}
-
-		for (var tb : lines)
-			System.out.println(tb);
-
-		lines.forEach(tb -> {
-			System.out.println(tb);
-		});
+		IElementReader er = (is) ->{
+			System.out.println( "Hello from lambda");
+			return null;
+			};
+			
+		fooBar(er);
 	}
-
+	
+	public static void fooBar(IElementReader rr )
+	{
+		rr.readFromKeyboard(System.in);
+	}
 }

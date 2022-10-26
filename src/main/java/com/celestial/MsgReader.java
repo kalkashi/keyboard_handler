@@ -1,6 +1,8 @@
 package com.celestial;
 
-public abstract class MsgReader 
+import java.io.InputStream;
+
+public abstract class MsgReader implements IElementReader 
 {
 	protected	IPrompt itsPrompt;
 	
@@ -12,5 +14,7 @@ public abstract class MsgReader
 	public	void setPrompt( IPrompt cp )
 	{
 		itsPrompt = cp;
-	}	
+	}
+	
+    //abstract String readFromKeyboard( InputStream is); 
 }
