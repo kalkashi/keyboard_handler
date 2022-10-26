@@ -10,16 +10,32 @@ import java.util.Scanner;
 
 /**
  *
- * @author selvy
+ * @author selvyn
+ * 
+ * I really don't like the use of inheritance just to get hold the prompt()
+ * method, and there's no real polymorphism here.  So I'm going to use
+ * CustomPrompt in an aggregate relationship instead
  */
-public class MsgElementReader extends CustomPrompt implements IElementReader
+public class MsgElementReader implements IElementReader
 {
+    private CustomPrompt itsPrompt;
+    
+    public  MsgElementReader( CustomPrompt cp )
+    {
+        itsPrompt = cp;
+    }
+    
+    public  void    setPrompt( CustomPrompt cp )
+    {
+        itsPrompt = cp;
+    }
+    
     @Override
     public  String readFromKeyboard( InputStream is )
     {
         Scanner theScanner = new Scanner( is );
 
-        prompt("Enter an Item (White space as seperator):");
+        itsPrompt.prompt("Enter an Item (White space as seperator):");
 
         String item = theScanner.next();
 

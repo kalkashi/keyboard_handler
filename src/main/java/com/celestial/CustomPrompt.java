@@ -11,7 +11,7 @@ package com.celestial;
  */
 public class CustomPrompt
 {
-    protected void prompt( String msg )
+    public void prompt( String msg )
     {
         System.out.print( "[" + msg + "] " );
     }    

@@ -12,8 +12,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        MsgElementReader mer = new MsgElementReader();
-        MsgLineReader mlr = new MsgLineReader();
+        CustomPrompt thePrompt = new CustomPrompt();
+        MsgElementReader mer = new MsgElementReader(thePrompt);
+        MsgLineReader mlr = new MsgLineReader(thePrompt);
         MsgIntReader mir = new MsgIntReader();
         ArrayList<IElementReader> readers = new ArrayList<>(2);
         readers.add(mer);
