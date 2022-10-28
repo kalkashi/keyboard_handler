@@ -6,6 +6,7 @@
 package com.celestial;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Runner
         while( !exitApp && lineRead != null )
         {
             for(var reader : itsReaders) {
-                lineRead = reader.readFromKeyboard(System.in);
+                lineRead = reader.readFromKeyboard(new Scanner(System.in));
                 if (lineRead.equalsIgnoreCase("QUIT"))
                 {
                     exitApp = true;

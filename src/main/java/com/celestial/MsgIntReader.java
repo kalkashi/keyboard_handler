@@ -11,10 +11,8 @@ public class MsgIntReader extends MsgReader
     }
     
     @Override
-    public  String readFromKeyboard( InputStream is )
+    public  String readFromKeyboard( Scanner theScanner )
     {
-        Scanner theScanner = new Scanner( is );
-
         itsPrompt.prompt("Enter an Integer (White space as seperator):");
 
         String item = String.valueOf(theScanner.nextInt());

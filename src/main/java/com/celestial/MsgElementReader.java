@@ -24,10 +24,8 @@ public class MsgElementReader extends MsgReader
     }
     
     @Override
-    public  String readFromKeyboard( InputStream is )
+    public  String readFromKeyboard( Scanner theScanner )
     {
-        Scanner theScanner = new Scanner( is );
-
         itsPrompt.prompt("Enter an Item (White space as seperator):");
 
         String item = theScanner.next();

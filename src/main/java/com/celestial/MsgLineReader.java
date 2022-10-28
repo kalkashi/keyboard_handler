@@ -20,10 +20,8 @@ public class MsgLineReader extends MsgReader
     }
     
     @Override
-    public  String readFromKeyboard( InputStream is )
+    public  String readFromKeyboard( Scanner theScanner )
     {
-        Scanner theScanner = new Scanner( is );
-        
         itsPrompt.prompt("Enter a message (enter to complete):");
 
         String str = theScanner.nextLine();

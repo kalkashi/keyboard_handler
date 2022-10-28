@@ -1,8 +1,8 @@
 package com.celestial;
 
-import java.io.InputStream;
+import java.util.Scanner;
 
 public interface IElementReader
 {
-    public  String readFromKeyboard(InputStream is);
+    public  String readFromKeyboard(Scanner sc);
 }
